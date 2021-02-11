@@ -1,0 +1,128 @@
+.Archive-container {
+    display: grid;
+    /* grid-template-columns: 45% 10% 40%; */
+    grid-template-columns: 10% 35% 5% 35% 10%;
+}
+
+.Archive-generalAnalysis {
+    grid-column-start: 2;
+
+    position: fixed;
+    left: 10%;
+}
+
+.Archive-savedTranscripts {
+    grid-column-start: 4;
+}
+
+.Archive-button {
+    margin-left: auto;
+    margin-right: auto;
+    border: solid var(--thegreen) 2px;
+    padding: 16px 24px;
+    width: 480px;
+    height: 64px;
+    font-size: 24px;
+    color: var(--thegreen);
+    background-color: rgba(0, 0, 0, 0);
+    letter-spacing: 0;
+
+    display: block;
+}
+
+/* Hover effect from https://codepen.io/davidicus/pen/emgQKJ */
+
+.Archive-button:hover {
+    letter-spacing: 5px;
+}
+
+.Archive-button::after,
+.Archive-button::before {
+    backface-visibility: hidden;
+    border: 1px solid rgba(#fff, 0);
+    bottom: 0px;
+    content: " ";
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    transition: all 280ms ease-in-out;
+    width: 0;
+}
+
+.Archive-button:hover:after,
+.Archive-button:hover::before {
+    backface-visibility: hidden;
+    border-color: #fff;
+    transition: width 350ms ease-in-out;
+    width: 70%;
+}
+
+.Archive-button::before {
+    bottom: auto;
+    top: 0;
+    width: 70%;
+}
+
+.Archive-line {
+    margin-bottom: 10px;
+    border: none;
+    border-top: 3px double black;
+    color: black;
+}
+
+.Archive-containerTwo {
+    margin-top: 50px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.Archive-imageTwo {
+    width: 700px;
+}
+
+.Archive-paragraphTwo {
+    text-align: center;
+}
+
+.Archive-paragraphTwoTop {
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.Archive-paragraphTwoBottom {
+    color: gray;
+}
+
+@media screen and (max-width: 1100px) {
+    .Archive-container {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .Archive-generalAnalysis {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 32px;
+        width: 540px;
+        position: relative;
+        left: 0;
+    }
+
+    .Archive-savedTranscripts {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 32px;
+        width: 540px;
+    } 
+}
+
+@media screen and (max-width: 700px) {
+    .Archive-imageTwo {
+        max-width: 500px;
+    }
+}

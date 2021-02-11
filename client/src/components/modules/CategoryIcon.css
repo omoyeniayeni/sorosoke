@@ -1,0 +1,30 @@
+.CategoriesIcon-image {
+    /* make it responsive */
+    width: 100%;
+    height: auto;
+    display: grid;
+}
+
+.CategoriesIcon-imageContainer:hover .CategoriesIcon-image {
+    /* make it responsive */
+    filter: grayscale(100%);
+    opacity: 0.3;
+}
+
+.CategoriesIcon-imageContainer:hover .CategoriesIcon-text {
+    opacity: 1;
+}
+
+.CategoriesIcon-imageContainer {
+    display: grid;
+}
+
+.CategoriesIcon-image, .CategoriesIcon-text {
+    grid-area: 1 / 1;
+}
+
+.CategoriesIcon-text {
+    font-size: 15px;
+    opacity: 0;
+    margin-top: 10px;
+}

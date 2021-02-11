@@ -1,0 +1,41 @@
+/* Design source: https://codepen.io/llogan382/pen/gJRmZP (modified)*/
+
+.SingleSavedAnalysis-container {
+    width: 480px;
+    max-width: 480px;
+    margin-bottom: 50px;
+    background: white;
+    border: solid gray 1px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+    padding: 16px 16px 16px 56px;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(gray), color-stop(4%, white)) 0 8px;
+    background-size: 100% 32px;
+    position: relative;
+    line-height: 32px;
+    border-top: none;
+}
+
+.SingleSavedAnalysis-container::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    top: 0;
+    left: 40px;
+    bottom: 0;
+    border: 1px solid;
+    border-color: transparent red;
+}
+
+.SingleSavedAnalysis-analysis {
+    margin: 0;
+    font-weight: 800;
+}
+
+.SingleSavedAnalysis-item {
+    margin: 0;
+}
+

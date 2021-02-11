@@ -1,0 +1,31 @@
+.NavIcons-icon {
+    width: 48px;
+    height: 48px; 
+    color: black;
+}
+
+.NavIcons-button {
+    border: none;
+    background-color: rgba(0, 0, 0, 0);
+
+    position: absolute;
+    top: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+.NavIcons-leftButton {
+    left: 50px;
+}
+
+.NavIcons-rightButton {
+    right: 50px;
+}
+
+.NavIcons-control {
+    padding-left: 35px;
+}
+
+.NavIcons-doubleDownButton {
+    color: var(--thegreen);
+}

@@ -1,0 +1,41 @@
+.SingleSavedDelete-container {
+    width: 600px;
+    max-width: 600px;
+    margin-bottom: 50px;
+    background: white;
+    border: solid gray 1px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+    padding: 16px 16px 16px 56px;
+    position: relative;
+    line-height: 32px;
+    border-top: none;
+}
+
+.SingleSavedDelete-container::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    top: 0;
+    left: 40px;
+    bottom: 0;
+    border: 1px solid;
+    border-color: rgba(0,0,0,0) var(--thepink);
+}
+
+.SingleSavedDelete-item {
+    margin: 0;
+    color: darkred;
+}
+
+.SingleSavedDelete-button {
+    margin: 0;
+    padding: 2px 16px;
+    border: solid darkred 1px;
+    border-radius: 4px;
+    background-color: darkred;
+    color: white;
+}

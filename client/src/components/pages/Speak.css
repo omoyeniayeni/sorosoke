@@ -1,0 +1,14 @@
+.Speak-timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Speak-warning {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    font-weight: bold;
+}

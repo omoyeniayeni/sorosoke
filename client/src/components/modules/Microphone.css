@@ -1,0 +1,19 @@
+.Microphone-all {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 48px;
+}
+
+.Microphone-icon {
+    height: 144px;
+    width: 144px;
+}
+
+.Microphone-isListening {
+    color: red;
+}
+
+.Microphone-isNotListening {
+    color: gray;
+}

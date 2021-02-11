@@ -1,0 +1,72 @@
+/* Design source: https://codepen.io/llogan382/pen/gJRmZP (modified)*/
+
+.SingleSavedTranscript-container {
+    width: 540px;
+    max-width: 600px;
+    margin-bottom: 50px;
+    background: white;
+    border: solid gray 1px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+    padding: 16px 16px 16px 56px;
+    background: -webkit-gradient(linear, 0 0, 0 100%, from(gray), color-stop(4%, white)) 0 8px;
+    background-size: 100% 32px;
+    position: relative;
+    line-height: 32px;
+    border-top: black;
+}
+
+.SingleSavedTranscript-date {
+    display: flex;
+    justify-content: flex-end;
+    margin: 0;
+    color: #EE7674;
+}
+
+.SingleSavedTranscript-title, .SingleSavedTranscript-analysis {
+    margin: 0;
+    font-weight: 800;
+}
+
+.SingleSavedTranscript-words {
+    margin: 0;
+    font-style: italic;
+}
+
+.SingleSavedTranscript-container::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    top: 0;
+    left: 40px;
+    bottom: 0;
+    border: 1px solid;
+    border-color: rgba(0,0,0,0) var(--thepink);
+}
+
+.SingleSavedTranscript-tabs > a {
+    background-color: rgb(240, 240, 240);
+    border-left: solid black 1px;
+    border-right: solid black 1px;
+    margin: 0px 0.5px;
+    color: black;
+}
+
+.SingleSavedTranscript-tabs > .nav-link:hover {
+    background-color: rgba(238, 118, 116, 0.2);
+    border: solid 1px gray;
+    border-bottom: none;
+    color: black;
+}
+
+.SingleSavedTranscript-tabs > .nav-link.active {
+    color: black;
+    border: solid 1px gray;
+    border-bottom: black;
+    font-weight: bold;
+    background-color: white;
+}
+

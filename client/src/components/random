@@ -1,0 +1,15 @@
+    // updatePauseTime = () => {
+    //     if (this.isTranscriptStagnant && this.isPauseStagnant) {
+            // this.setState({
+            //     pauseTimeInterval: setInterval(() => {
+            //         this.setState({
+            //             pauseTime: this.state.pauseTime + 1
+            //         })
+            //     }, 1000)
+            // })
+    //     }
+    // }
+
+    // pausePauseTime = () => {
+    //     clearInterval(this.state.pauseTimeInterval)
+    // }

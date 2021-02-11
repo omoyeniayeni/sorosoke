@@ -1,0 +1,38 @@
+.GeneralAnalysis-chart {
+    border: solid rgb(216, 216, 216) 1px;
+    margin: 16px 0px;
+    padding: 16px;
+    /* Box-shadow from Joseph Marikle from https://stackoverflow.com/questions/24744776/creating-bevel-effect-for-content-box */
+    box-shadow: inset 0.2em 0.2em 0.2em 0 rgba(255,255,255,0.5), inset -0.2em -0.2em 0.2em 0 rgba(0,0,0,0.5);
+}
+
+.GeneralAnalysis-container {
+}
+
+.GeneralAnalysis-chartNote {
+    font-size: 10px;
+    color: gray;
+}
+
+.GeneralAnalysis-tabs > a {
+    background-color: rgb(240, 240, 240);
+    border-left: solid black 1px;
+    border-right: solid black 1px;
+    margin: 0px 0.5px;
+    color: black;
+}
+
+.GeneralAnalysis-tabs > .nav-link:hover {
+    background-color: rgba(238, 118, 116, 0.2);
+    border: solid 1px gray;
+    border-bottom: none;
+    color: black;
+}
+
+.GeneralAnalysis-tabs > .nav-link.active {
+    color: black;
+    border: solid 1px gray;
+    border-bottom: black;
+    font-weight: bold;
+    background-color: white;
+}

@@ -1,0 +1,147 @@
+.Timer-all {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.Timer-image {
+    position: sticky;
+    height: 180px;
+    width: 180px;
+}
+
+.Timer-item {
+    margin: 24px;
+}
+
+.Timer-micMessage {
+    margin: 8px;
+    font-size: small;
+    color: gray;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.Timer-topic {
+    text-align-last: center;
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.Timer-svg {
+    /* todo */
+}
+
+.Timer-innerCircle {
+    fill: none;
+    stroke: none;
+}
+
+.Timer-outerCircle {
+    stroke-width: 7px;
+    stroke: grey;
+}
+
+.Timer-timeLeft {
+    position: absolute;
+
+    /* Size should match the parent container */
+    width: 180px;
+    height: 180px;
+
+    /* Keep the label aligned to the top */
+    top: 0;
+
+    /* Create a flexible box that centers content vertically and horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    /* Sort of an arbitrary number; adjust to your liking */
+    font-size: 48px;
+}
+
+.Timer-path {
+    /* Just as thick as the original ring */
+    stroke-width: 7px;
+
+    /* Rounds the line endings to create a seamless circle */
+    stroke-linecap: round;
+
+    /* Makes sure the animation starts at the top of the circle */
+    transform: rotate(90deg);
+    transform-origin: center;
+
+    /* One second aligns with the speed of the countdown timer */
+    transition: 1s linear all;
+
+    /* Allows the ring to change color when the color value updates */
+    stroke: currentColor;
+    }
+
+    .base-timer__svg {
+    /* Flips the svg and makes the animation to move left-to-right */
+    transform: scaleX(-1);
+}
+
+.Timer-normal {
+    color: green;
+}
+
+.Timer-warning {
+    color: orange;
+}
+
+.Timer-alert {
+    color: red;
+}
+
+.Timer-endMessage {
+    font-size: xx-large;
+    font-weight: bold;
+    margin-top: 48px;
+}
+
+.Timer-transcript{
+    border: solid gray 1px;
+    background-color: black;
+    color: white;
+    font-size: 24px;
+    padding: 0px 8px;
+    margin-top: 48px;
+}
+
+.Timer-button {
+    margin: 24px 24px;
+    border: solid 2px;
+    padding: 0px 8px;
+    width: 96px;
+    height: 32px;
+    font-size: 24px;
+    background-color: rgba(0, 0, 0, 0);
+    letter-spacing: 0;
+    line-height: 32px;
+}
+
+.Timer-littleMessage {
+    position: fixed;
+    right: 75px;
+    bottom: 50px;
+}
+
+.Timer-warningMessage {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 32px;
+    font-weight: bold;
+}

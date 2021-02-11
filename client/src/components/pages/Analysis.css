@@ -1,0 +1,67 @@
+/* Design source: https://codepen.io/llogan382/pen/gJRmZP (modified)*/
+
+.Analysis-all {
+    display: block;
+    margin: 150px auto;
+    text-align: center;
+}
+
+.Analysis-heading {
+    font-size: 32px;
+}
+
+.Analysis-transcriptContainer {
+    margin: 25px auto 50px auto;
+    width: 540px;
+    background: white;
+    border: solid gray 1px;
+    border-radius: 4px;
+    box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+    padding: 16px 16px 16px 56px;
+    background-size: 100% 40px;
+    position: relative;
+    line-height: 32px;
+}
+
+.Analysis-transcriptContainer::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    top: 0;
+    left: 40px;
+    bottom: 0;
+    border: 1px solid;
+    border-color: rgba(0,0,0,0) var(--thepink);
+}
+
+.Analysis-transcript {
+    margin: 0;
+}
+
+.Analysis-analysis {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    width: 540px;
+    border: solid var(--thegreen) 2px;
+    border-style: groove;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.Analysis-footer {
+    margin-top: 24px;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.Analysis-profile {
+    color: var(--thepink)
+}
+
+.Analysis-profile:hover {
+    color: var(--thegreen);
+    font-weight: bold;
+    font-size: 18px;
+    text-decoration: none;
+}

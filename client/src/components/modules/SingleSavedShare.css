@@ -1,0 +1,57 @@
+/* Design source: https://codepen.io/llogan382/pen/gJRmZP (modified)*/
+
+.SingleSavedShare-container {
+    width: 600px;
+    max-width: 600px;
+    margin-bottom: 50px;
+    background: white;
+    border: solid gray 1px;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+    padding: 16px 16px 16px 56px;
+    position: relative;
+    line-height: 32px;
+    border-top: none;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.SingleSavedShare-container::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    top: 0;
+    left: 40px;
+    bottom: 0;
+    border: 1px solid;
+    border-color: rgba(0,0,0,0) var(--thepink);
+}
+
+.SingleSavedShare-whatsapp {
+    color: rgb(37 211 102);
+    width: 32px;
+    height: 32px; 
+}
+
+.SingleSavedShare-twitter {
+    color: rgb(29 161 242);
+    width: 32px;
+    height: 32px; 
+}
+
+.SingleSavedShare-email {
+    width: 24px;
+    height: 24px; 
+    color: #4267B2;
+}
+
+.SingleSavedShare-message{
+    width: 24px;
+    height: 24px; 
+    color: #4267B2;
+}
