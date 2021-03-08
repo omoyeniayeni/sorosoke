@@ -1,0 +1,20 @@
+.NotCompatible-sectionLogo {
+    height: 775px;
+    /* background: linear-gradient(white, #B4C8A8); */
+    color: black;
+    background-color: white;
+    padding: 32px 64px;
+}
+
+.NotCompatible-bigText{
+    max-width: 500px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 50%; */
+}
+
+.NotCompatible-disclaimer{
+    text-align: center;
+}
+

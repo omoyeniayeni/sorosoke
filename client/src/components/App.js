@@ -3,6 +3,7 @@ import { Router, Redirect, navigate } from "@reach/router";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import NotFound from "./pages/NotFound.js";
+import NotCompatible from "./pages/NotCompatible.js";
 import Navbar from "./modules/Navbar.js";
 import Profile from "./pages/Profile.js";
 import LoginPage from "./pages/LoginPage.js";
@@ -248,104 +249,111 @@ class App extends Component {
   }
 
   render() {
-    return (
-      <>
-        <Router>
-          <LoginPage 
-            exact path = "/"
-            handleLogin={this.handleLogin}
-            handleLogout={this.handleLogout}
-            provideTopic = {this.provideTopic}
-            userId={this.state.userId}
-            userName={this.state.userName}
-          />
-          <Profile 
-            path = "/profile/:user.id"
-            handleLogin={this.handleLogin}
-            handleLogout={this.handleLogout}
-            provideTopic = {this.provideTopic}
-            findSynonyms={this.findSynonyms}
-            userId={this.state.userId}
-            userName={this.state.userName}
-          />
-          <Categories 
-            path = "/categories/"
-            provideTopic = {this.provideTopic}
-            handleLogin={this.handleLogin}
-            handleLogout={this.handleLogout}
-            provideTopic = {this.provideTopic}
-            userId={this.state.userId}
-            userName={this.state.userName}
-          />
-          <Speak 
-            path = "/speak/"
-            handleLogin={this.handleLogin}
-            handleLogout={this.handleLogout}
-            setTime = {this.state.setTime}
-            randomTopic = {this.state.randomTopic}
-            sendTimeUsed = {this.sendTimeUsed}
-            sendPauseTime = {this.sendPauseTime}
-            analyseTranscript = {this.analyseTranscript}
-            provideTopic = {this.provideTopic}
-            userId={this.state.userId}
-            userName={this.state.userName}
-            getSpeed={this.getSpeed}
-            resetTranscript = {this.resetTranscript}
-          />
-          <SetTime
-            path = "/timer/"
-            handleTime = {this.handleTime}
-            handleLogin={this.handleLogin}
-            handleLogout={this.handleLogout}
-            provideTopic = {this.provideTopic}
-            randomTopic = {this.state.randomTopic}
-            userId={this.state.userId}
-            userName={this.state.userName}
-          />
-          {this.state.speed !== 0 ?
-            <Analysis
-            path = "/analysis/"
-            transcriptId={this.state.transcriptId}
-            transcriptTopic={this.state.transcriptTopic}
-            transcriptContent={this.state.transcriptContent}
-            speed={this.state.speed}
-            timeUsed = {this.state.timeUsed}
-            pauses = {this.state.pauses}
-            pauseTime = {this.state.pauseTime}
-            speechDelay = {this.state.speechDelay}
-            userName={this.state.userName}
-            provideTopic = {this.provideTopic}
-            handleLogin={this.handleLogin}
-            handleLogout={this.handleLogout}
-            userId={this.state.userId}
-            resetTranscript = {this.resetTranscript}
-            topThreeRepeatedWords= {this.topThreeRepeatedWords}
-            findSynonyms={this.findSynonyms}
-            synonyms = {this.state.synonyms}
-          />
-          :
-          null
-          }
-          <TopicPage 
-            path = "/topic/"
-            handleLogin={this.handleLogin}
-            handleLogout={this.handleLogout}
-            randomTopic = {this.state.randomTopic}
-            provideTopic = {this.provideTopic}
-            userId={this.state.userId}
-            userName={this.state.userName}
-          />
-          <About 
-            path = "/about/"
-            handleLogin={this.handleLogin}
-            handleLogout={this.handleLogout}
-            userId={this.state.userId}
-            userName={this.state.userName}
-          />
-          <NotFound default />
-        </Router>
-      </>
-    );
+    if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
+      return (
+        <>
+          <Router>
+            <LoginPage 
+              exact path = "/"
+              handleLogin={this.handleLogin}
+              handleLogout={this.handleLogout}
+              provideTopic = {this.provideTopic}
+              userId={this.state.userId}
+              userName={this.state.userName}
+            />
+            <Profile 
+              path = "/profile/:user.id"
+              handleLogin={this.handleLogin}
+              handleLogout={this.handleLogout}
+              provideTopic = {this.provideTopic}
+              findSynonyms={this.findSynonyms}
+              userId={this.state.userId}
+              userName={this.state.userName}
+            />
+            <Categories 
+              path = "/categories/"
+              provideTopic = {this.provideTopic}
+              handleLogin={this.handleLogin}
+              handleLogout={this.handleLogout}
+              provideTopic = {this.provideTopic}
+              userId={this.state.userId}
+              userName={this.state.userName}
+            />
+            <Speak 
+              path = "/speak/"
+              handleLogin={this.handleLogin}
+              handleLogout={this.handleLogout}
+              setTime = {this.state.setTime}
+              randomTopic = {this.state.randomTopic}
+              sendTimeUsed = {this.sendTimeUsed}
+              sendPauseTime = {this.sendPauseTime}
+              analyseTranscript = {this.analyseTranscript}
+              provideTopic = {this.provideTopic}
+              userId={this.state.userId}
+              userName={this.state.userName}
+              getSpeed={this.getSpeed}
+              resetTranscript = {this.resetTranscript}
+            />
+            <SetTime
+              path = "/timer/"
+              handleTime = {this.handleTime}
+              handleLogin={this.handleLogin}
+              handleLogout={this.handleLogout}
+              provideTopic = {this.provideTopic}
+              randomTopic = {this.state.randomTopic}
+              userId={this.state.userId}
+              userName={this.state.userName}
+            />
+            {this.state.speed !== 0 ?
+              <Analysis
+              path = "/analysis/"
+              transcriptId={this.state.transcriptId}
+              transcriptTopic={this.state.transcriptTopic}
+              transcriptContent={this.state.transcriptContent}
+              speed={this.state.speed}
+              timeUsed = {this.state.timeUsed}
+              pauses = {this.state.pauses}
+              pauseTime = {this.state.pauseTime}
+              speechDelay = {this.state.speechDelay}
+              userName={this.state.userName}
+              provideTopic = {this.provideTopic}
+              handleLogin={this.handleLogin}
+              handleLogout={this.handleLogout}
+              userId={this.state.userId}
+              resetTranscript = {this.resetTranscript}
+              topThreeRepeatedWords= {this.topThreeRepeatedWords}
+              findSynonyms={this.findSynonyms}
+              synonyms = {this.state.synonyms}
+            />
+            :
+            null
+            }
+            <TopicPage 
+              path = "/topic/"
+              handleLogin={this.handleLogin}
+              handleLogout={this.handleLogout}
+              randomTopic = {this.state.randomTopic}
+              provideTopic = {this.provideTopic}
+              userId={this.state.userId}
+              userName={this.state.userName}
+            />
+            <About 
+              path = "/about/"
+              handleLogin={this.handleLogin}
+              handleLogout={this.handleLogout}
+              userId={this.state.userId}
+              userName={this.state.userName}
+            />
+            <NotFound default />
+          </Router>
+        </>
+      );
+    } 
+    else {
+      return (
+        <NotCompatible />
+      );
+    }
   }
 }
 
