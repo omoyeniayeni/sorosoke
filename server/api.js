@@ -87,7 +87,7 @@ router.post("/addanalysis", auth.ensureLoggedIn, (req, res) => {
 // Category
 // Get categories
 router.get("/categories", (req, res) => {
-  Category.find({}).then((category) => {
+  Category.find({}).sort({category: 'ascending'}).then((category) => {
     res.send(category);
   });
 });

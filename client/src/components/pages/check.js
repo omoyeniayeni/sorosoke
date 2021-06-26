@@ -6,25 +6,20 @@ import Timer from "../modules/Timer.js";
 import Topic from "../modules/Topic.js";
 import { NavLeft, NavRight } from "../modules/NavIcons.js";
 import LoginPage from "./LoginPage.js";
-import NotCompatible from "./NotCompatible.js";
 
 
 import "./Speak.css";
-let recognition;
-if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
-    let SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition || window.oSpeechRecognition;
-    let SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
-    let SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
-    
-    recognition = new SpeechRecognition();
-    
-    recognition.continous = true
-    recognition.interimResults = true
-    recognition.lang = 'en-US'   
-}
-else {
-    recognition = {continous:true, interimResults:true, lang:"en-US"}
-}
+ 
+let SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition || window.oSpeechRecognition;
+let SpeechGrammarList = SpeechGrammarList || webkitSpeechGrammarList;
+let SpeechRecognitionEvent = SpeechRecognitionEvent || webkitSpeechRecognitionEvent;
+ 
+let recognition = new SpeechRecognition();
+ 
+recognition.continous = true
+recognition.interimResults = true
+recognition.lang = 'en-US'
+ 
   
 class Speak extends Component {
     constructor() {
@@ -124,7 +119,6 @@ class Speak extends Component {
     }
 
     render() {
-        if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
         return (
             <>
             {this.props.userId && this.props.randomTopic && this.props.setTime ? (
@@ -180,12 +174,6 @@ class Speak extends Component {
             }
             </>
         )
-        }
-        else {
-            return (
-                <NotCompatible/>
-            )
-        }
     }
 }
  

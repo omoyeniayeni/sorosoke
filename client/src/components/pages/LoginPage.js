@@ -33,9 +33,11 @@ class LoginPage extends Component {
         return (
             <div>                
                 <section className="LoginPage-sectionLogo">
-                    <img src={image} className="LoginPage-bigText" />
-                    <p className="LoginPage-loginCue">Ready to improve your speaking skills? {loginButton}</p>
-                    <a className="LoginPage-navDown" href="#LoginPage-sectionIntroduction"><NavDoubleDown /></a>
+                    <section className="LoginPage-sectionLogoContent">
+                        <img src={image} className="LoginPage-bigText" />
+                        <p className="LoginPage-loginCue">Ready to improve your speaking skills? {loginButton}</p>
+                        <a className="LoginPage-navDown" href="#LoginPage-sectionIntroduction"><NavDoubleDown /></a>
+                    </section>
                 </section>
                 <section id="LoginPage-sectionIntroduction" className="LoginPage-sectionIntroduction">
                     <p  className="LoginPage-noteHead">Why use SoroSoke?</p>

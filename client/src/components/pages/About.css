@@ -5,7 +5,7 @@
 }
 
 .About-sectionIntroduction {
-    height: 700px;
+    height: 100vh;
     color: white;
     background-color: black;
     /* ADD GRADIENT */
@@ -63,15 +63,15 @@
 
 .About-sectionAllSteps {
     color: black;
-    height: 700px;
+    height: 100vh;
     /* background: linear-gradient(var(--thelightpink), var(--thegreen)); */
     background-color: white;
-    padding: 24px 80px;
+    padding: 128px 80px;
 }
 
 .About-sectionHead {
     text-align: center;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
     margin-top: 24px;
     text-decoration: underline;
     text-decoration-color: var(--thegreen);
@@ -190,5 +190,11 @@
         margin-top: 16px;
         text-align: left;
         max-width: none;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .About-sectionIntroduction {
+        height: 1000px;
     }
 }
