@@ -18,7 +18,7 @@ export class NotCompatible extends Component {
                     <div className="NotCompatible-disclaimer">
                         <h3><FaRegSadTear/> Browser / Device Not Supported <FaRegSadTear/> </h3>
                         <br/>
-                        SoroSoke is only available for use on PCs with Chrome browser.
+                        SoroSoke is only available for use on PCs and with Chrome browser.
                     </div>
                 </section> 
             </div>

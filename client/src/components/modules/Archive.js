@@ -25,7 +25,7 @@ class Archive extends Component {
                 labels: [],
                 datasets: []
             },
-            pauseData: {
+            pauseRateData: {
                 labels: [],
                 datasets: []
             },
@@ -44,7 +44,7 @@ class Archive extends Component {
             // Create an array to store the dates
             let dates = [];
             let speeds = [];
-            let pauses = [];
+            let pauseRates = [];
             let pauseTimes = [];
             // Make rows the maximum number of rows that will be displayes
             let rows = this.state.labelMax;
@@ -63,18 +63,18 @@ class Archive extends Component {
             for (let index = 0; index < rows; index++) {
                 dates[index] = analysis[index]["date"].substring(5, 10);
                 speeds[index] = analysis[index]["speed"];
-                pauses[index] = analysis[index]["pauses"];
+                pauseRates[index] = analysis[index]["pauseRates"];
                 pauseTimes[index] = analysis[index]["pauseTime"]
             }
             // Calculate the average speed of the user using the function created below
             let averageSpeed = this.getAverage(speeds);
-            let averagePause = this.getAverage(pauses);
+            let averagePauseRate = this.getAverage(pauseRates);
             let averagePauseTime = this.getAverage(pauseTimes);
             // Create an array (averageSpeedArray) that contains the average speed N number of times
             // where N is the number of inputs the user has
             let averageSpeedArray = this.repeat(averageSpeed, speeds.length);
             let recommendedSpeedArray = this.repeat(this.state.recommendedSpeed, speeds.length);
-            let averagePauseArray = this.repeat(averagePause, pauses.length);
+            let averagePauseRateArray = this.repeat(averagePauseRate, pauseRates.length);
             let averagePauseTimeArray = this.repeat(averagePauseTime, pauseTimes.length);
 
             let timeNow = new Date();
@@ -128,8 +128,8 @@ class Archive extends Component {
 
             this.setState(prevState => ({
                 ...prevState,
-                pauseData: {
-                    ...prevState.pauseData,
+                pauseRateData: {
+                    ...prevState.pauseRateData,
                     // The dates array created above is made the label
                     labels: dates,
                     datasets: [{
@@ -141,13 +141,13 @@ class Archive extends Component {
                         pointHoverBackgroundColor: 'black',
                         pointBackgroundColor: 'gray',
                         borderCapStyle: "square",
-                        // The pauses array created above is made the data
-                        data: pauses,
+                        // The pauseRates array created above is made the data
+                        data: pauseRates,
                     },
                     {
                         label: "Average",
-                        // The averagePauseArray array created above is made the data
-                        data: averagePauseArray,
+                        // The averagePauseRateArray array created above is made the data
+                        data: averagePauseRateArray,
                         fill: false,
                         borderColor:'#EE7674',
                         borderCapStyle: "square"
@@ -214,7 +214,7 @@ class Archive extends Component {
             {
                 let dates = [];
                 let speeds = [];
-                let pauses = [];
+                let pauseRates = [];
                 let pauseTimes = [];
     
                 let rows = this.state.labelMax;        
@@ -232,18 +232,18 @@ class Archive extends Component {
                 for (let index = 0; index < rows; index++) {
                     dates[index] = this.state.savedTranscripts[index]["date"].substring(5, 10);
                     speeds[index] = this.state.savedTranscripts[index]["speed"];
-                    pauses[index] = this.state.savedTranscripts[index]["pauses"];
+                    pauseRates[index] = this.state.savedTranscripts[index]["pauseRates"];
                     pauseTimes[index] = this.state.savedTranscripts[index]["pauseTime"]
                 }
                 // Calculate the average speed of the user using the function created below
                 let averageSpeed = this.getAverage(speeds);
-                let averagePause = this.getAverage(pauses);
+                let averagePauseRate = this.getAverage(pauseRates);
                 let averagePauseTime = this.getAverage(pauseTimes);
                 // Create an array (averageSpeedArray) that contains the average speed N number of times
                 // where N is the number of inputs the user has
                 let averageSpeedArray = this.repeat(averageSpeed, speeds.length);
                 let recommendedSpeedArray = this.repeat(this.state.recommendedSpeed, speeds.length);
-                let averagePauseArray = this.repeat(averagePause, pauses.length);
+                let averagePauseRateArray = this.repeat(averagePauseRate, pauseRates.length);
                 let averagePauseTimeArray = this.repeat(averagePauseTime, pauseTimes.length);
     
                 let timeNow = new Date();
@@ -297,8 +297,8 @@ class Archive extends Component {
     
                 this.setState(prevState => ({
                     ...prevState,
-                    pauseData: {
-                        ...prevState.pauseData,
+                    pauseRateData: {
+                        ...prevState.pauseRateData,
                         // The dates array created above is made the label
                         labels: dates,
                         datasets: [{
@@ -310,13 +310,13 @@ class Archive extends Component {
                             pointHoverBackgroundColor: 'black',
                             pointBackgroundColor: 'gray',
                             borderCapStyle: "square",
-                            // The pauses array created above is made the data
-                            data: pauses,
+                            // The pauseRates array created above is made the data
+                            data: pauseRates,
                         },
                         {
                             label: "Average",
-                            // The averagePauseArray array created above is made the data
-                            data: averagePauseArray,
+                            // The averagePauseRateArray array created above is made the data
+                            data: averagePauseRateArray,
                             fill: false,
                             borderColor:'#EE7674',
                             borderCapStyle: "square"

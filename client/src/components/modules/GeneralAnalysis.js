@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import SpeedChart from './SpeedChart.js';
-import PauseChart from './PauseChart.js';
+import PauseRateChart from './PauseRateChart.js';
 import PauseTimeChart from './PauseTimeChart.js';
 
 import Tabs from 'react-bootstrap/Tabs'
@@ -31,10 +31,10 @@ class GeneralAnalysis extends Component {
                             />
                         </div>
                     </Tab>
-                    <Tab eventKey="pauseChart" title="Pauses">
+                    <Tab eventKey="pauseRateChart" title="Pauses per Time">
                         <div className="GeneralAnalysis-container">
-                            <PauseChart 
-                                pauseData={this.props.pauseData} 
+                            <PauseRateChart 
+                                pauseRateData={this.props.pauseRateData} 
                                 rows = {this.props.rows}
                             />  
                         </div>

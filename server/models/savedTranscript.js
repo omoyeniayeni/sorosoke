@@ -16,6 +16,10 @@ const SavedTranscriptSchema = new mongoose.Schema({
     type: Number,
     default: 0,
   },
+  pauseRate: {
+    type: Number,
+    default: 0,
+  },
   pauseTime: {
     type: Number,
     default: 0,

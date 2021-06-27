@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { Line, Bar, Doughnut, Pie, Scatter } from 'react-chartjs-2';
 
-import "./PauseChart.css";
+import "./PauseRateChart.css";
 
-class PauseChart extends Component {
+class PauseRateChart extends Component {
     constructor(props) {
         super(props);
     }
@@ -14,16 +14,16 @@ class PauseChart extends Component {
 
     render() {
         return (
-            <div  className="PauseChart-all">
+            <div  className="PauseRateChart-all">
                 <Line
-                    data={this.props.pauseData}
+                    data={this.props.pauseRateData}
                     options= {{
                         responsive: true,
                         maintainAspectRatio: false,
                         aspectRatio: 1,
                         title: {
                             display: true,
-                            text: `number of pauses over the past ${this.props.rows} prompts:`,
+                            text: `frequency of pauses over the past ${this.props.rows} prompts:`,
                             fontSize: 16,
                             fontFamily: 'Cabin Sketch',
                             padding: 30,
@@ -58,7 +58,7 @@ class PauseChart extends Component {
                                 },
                                 scaleLabel: {
                                     display: true,
-                                    labelString: "Pauses",
+                                    labelString: "Frequency of Pauses",
                                     fontFamily: 'Cabin Sketch',
                                 },
                                 gridLines: {
@@ -80,4 +80,4 @@ class PauseChart extends Component {
     }
 }
 
-export default PauseChart
+export default PauseRateChart

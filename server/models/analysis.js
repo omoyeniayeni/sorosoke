@@ -6,6 +6,7 @@ const AnalysisSchema = new mongoose.Schema({
   timeUsed: Number,
   speed: Number,
   pauses: Number,
+  pauseRate: Number,
   pauseTime: Number,
   date: {
     type: Date,

@@ -20,15 +20,14 @@ class Analysis extends Component {
             _id: this.props.transcriptId, 
             timeUsed: (this.props.timeUsed).toFixed(2), 
             speed: this.props.speed, 
-            pauses: this.props.pauses, 
+            pauseRate: this.props.pauseRate,
+            pauses: this.props.pauses,
             pauseTime: (this.props.pauseTime).toFixed(2), 
             speechDelay: (this.props.speechDelay).toFixed(2),
         }
         post("/api/addanalysis", body)
         this.props.findSynonyms(this.props.transcriptContent)
     }
-
-    // .then(this.props.resetTranscript())
 
     isRepeat = (repeat) => {
         return repeat.length >= 1 ? true : false
@@ -60,6 +59,7 @@ class Analysis extends Component {
                         <div>You used <span style={{ color: "var(--thepink)" }}>{(this.props.timeUsed).toFixed(2)} seconds</span> to talk about "{this.props.transcriptTopic}"</div>
                         <div>Your speed was <span style={{ color: "var(--thepink)" }}>{this.props.speed}wps</span> </div>
                         <div>You paused <span style={{ color: "var(--thepink)" }}>{this.props.pauses} time(s)</span></div>
+                        <div>You pause frequency was <span style={{ color: "var(--thepink)" }}>{this.props.pauseRate} pauses per seconds</span></div>
                         <div>The duration of your total pauses was <span style={{ color: "var(--thepink)" }}>{this.props.pauseTime.toFixed(2)} seconds</span></div>
                         <div>You were silent for <span style={{ color: "var(--thepink)" }}>{this.props.speechDelay.toFixed(2)} seconds</span> before you started talking</div>
                         <br />

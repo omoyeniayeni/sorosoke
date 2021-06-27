@@ -34,6 +34,7 @@ class Speak extends Component {
             finalTranscript: undefined,
             ongoingTranscript: "",
             pauses: 0,
+            pauseRate: 0,
             pauseTime: 0,
             speechDelay: 0,
             startTime: undefined,
@@ -143,11 +144,13 @@ class Speak extends Component {
                             sendTimeUsed = {this.props.sendTimeUsed}
                             // Send pause time so that it can be used to calculate speed
                             pauses = {this.state.pauses}
+                            pauseRate = {this.state.pauseRate}
                             pauseTime = {this.state.pauseTime}
                             speechDelay = {this.state.speechDelay}
                             sendPauseTime = {this.props.sendPauseTime}
                             randomTopic={this.props.randomTopic}
                             getSpeed={this.props.getSpeed}
+                            getPauseRate={this.props.getPauseRate}
                             resetTranscript = {this.props.resetTranscript}
                         />
                     </div>

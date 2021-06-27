@@ -78,6 +78,7 @@ router.post("/addanalysis", auth.ensureLoggedIn, (req, res) => {
     document.timeUsed = req.body.timeUsed;
     document.speed = req.body.speed;
     document.pauses = req.body.pauses;
+    document.pauseRate = req.body.pauseRate;
     document.pauseTime = req.body.pauseTime;
     document.speechDelay = req.body.speechDelay;
     document.save().then((document) => {res.send(document)});
@@ -108,6 +109,7 @@ router.post("/analysis", (req, res) => {
     timeUsed: req.body.timeUsed,
     speed: req.body.speed,
     pauses: req.body.pauses,
+    pauseRate: req.body.pauseRate,
     pauseTime: req.body.pauseTime,
     // words: { repeatedWords: { word: req.body.word, synonyms: req.body.synonyms } },
   })

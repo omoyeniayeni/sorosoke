@@ -29,6 +29,7 @@ class Speak extends Component {
             finalTranscript: undefined,
             ongoingTranscript: "",
             pauses: 0,
+            pauseRate: 0,
             pauseTime: 0,
             speechDelay: 0,
             startTime: undefined,

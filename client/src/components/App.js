@@ -38,6 +38,7 @@ class App extends Component {
       timeUsed: 0,
       speed: 0,
       pauses: undefined,
+      pauseRate: undefined,
       pauseTime: undefined,
       speechDelay: undefined,
       transcriptContent: "",
@@ -109,6 +110,7 @@ class App extends Component {
       transcriptContent: transcriptObj.transcript,
     }, () => {
       this.getSpeed();
+      this.getPauseRate();
       // this.findSynonyms(this.state.transcriptContent);
       navigate("/analysis")})
   }
@@ -248,6 +250,18 @@ class App extends Component {
     })
   }
 
+  getPauseRate = () => {
+    let pauses = this.state.pauses;
+    // console.log(sentence)
+    let rawPauseRate = pauses/this.state.timeUsed;
+    // console.log(rawSpeed)
+    let pauseRate = rawPauseRate.toFixed(2)
+    // console.log(speed)
+    this.setState({
+      pauseRate: pauseRate
+    })
+  }
+
   render() {
     if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
       return (
@@ -292,6 +306,7 @@ class App extends Component {
               userId={this.state.userId}
               userName={this.state.userName}
               getSpeed={this.getSpeed}
+              getPauseRate={this.getPauseRate}
               resetTranscript = {this.resetTranscript}
             />
             <SetTime
@@ -313,6 +328,7 @@ class App extends Component {
               speed={this.state.speed}
               timeUsed = {this.state.timeUsed}
               pauses = {this.state.pauses}
+              pauseRate = {this.state.pauseRate}
               pauseTime = {this.state.pauseTime}
               speechDelay = {this.state.speechDelay}
               userName={this.state.userName}
