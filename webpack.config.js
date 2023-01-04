@@ -64,8 +64,7 @@ module.exports = {
   plugins: [new webpack.HotModuleReplacementPlugin()],
   devServer: {
     historyApiFallback: true,
-    contentBase: "./client/dist",
-    hot: true,
+    static: "./client/dist",
     proxy: {
       "/api": "http://localhost:3000",
       "/socket.io/*": {

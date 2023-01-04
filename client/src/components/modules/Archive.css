@@ -1,6 +1,5 @@
 .Archive-container {
     display: grid;
-    /* grid-template-columns: 45% 10% 40%; */
     grid-template-columns: 10% 35% 5% 35% 10%;
 }
 
@@ -30,7 +29,7 @@
     display: block;
 }
 
-/* Hover effect from https://codepen.io/davidicus/pen/emgQKJ */
+/* CREDIT: Hover effect from https://codepen.io/davidicus/pen/emgQKJ */
 
 .Archive-button:hover {
     letter-spacing: 5px;

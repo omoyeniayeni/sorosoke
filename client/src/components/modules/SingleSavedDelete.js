@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { get, post } from "../../utilities";
-import { Router, Redirect, navigate } from "@reach/router";
+import { post } from "../../utilities";
 
 import "./SingleSavedDelete.css";
 import "../../utilities.css";

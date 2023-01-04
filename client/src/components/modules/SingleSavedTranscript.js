@@ -1,13 +1,8 @@
 import React, { Component } from 'react'
-import { get, post } from "../../utilities";
 
 import Tabs from 'react-bootstrap/Tabs'
 import Tab from 'react-bootstrap/Tab'
-import TabContainer from 'react-bootstrap/TabContainer'
-import TabContent from 'react-bootstrap/TabContent'
-import TabPane from 'react-bootstrap/TabPane'
 
-import SingleSavedAnalysis from "./SingleSavedAnalysis.js";
 import SingleSavedDelete from "./SingleSavedDelete.js";
 import SingleSavedShare from "./SingleSavedShare.js";
 
@@ -36,7 +31,7 @@ class SingleSavedTranscript extends Component {
                             <div key={`B_${transcriptObj._id}`} className="SingleSavedTranscript-container">
                                 <p key={`C_${transcriptObj._id}`} className="SingleSavedTranscript-analysis">Analysis</p>
                                 <p key={`Time_Used_${transcriptObj._id}`} className="SingleSavedTranscript-words">You used {transcriptObj.timeUsed} seconds </p>
-                                <p key={`Speed_${transcriptObj._id}`} className="SingleSavedTranscript-words">Your spoke at a speed of {transcriptObj.speed} wps</p>
+                                <p key={`Speed_${transcriptObj._id}`} className="SingleSavedTranscript-words">You spoke at a speed of {transcriptObj.speed} wps</p>
                                 <p key={`Pauses_Rate_${transcriptObj._id}`} className="SingleSavedTranscript-words">The frequency of your pauses was {transcriptObj.pauseRate} pauses per second</p>
                                 <p key={`Pause_Time_${transcriptObj._id}`} className="SingleSavedTranscript-words">The duration of your pauses was {transcriptObj.pauseTime} seconds</p>
                                 <p key={`Speech_Delay_${transcriptObj._id}`} className="SingleSavedTranscript-words">You stayed silent for {transcriptObj.speechDelay} seconds before talking</p>

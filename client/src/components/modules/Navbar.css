@@ -31,7 +31,8 @@
 }
 
 .Navbar-logout {
-    justify-content: flex-end;
+    margin-top: auto;
+    margin-bottom: auto;
 }
 
 .Navbar-link:hover {

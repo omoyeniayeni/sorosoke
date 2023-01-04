@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from "@reach/router";
-import { navigate } from '@reach/router';
-import { get, post } from "../../utilities";
-import { Redirect } from "react-router-dom";
+import { post } from "../../utilities";
 
 import Navbar from "../modules/Navbar.js";
 import LoginPage from "./LoginPage.js";
@@ -59,7 +57,7 @@ class Analysis extends Component {
                         <div>You used <span style={{ color: "var(--thepink)" }}>{(this.props.timeUsed).toFixed(2)} seconds</span> to talk about "{this.props.transcriptTopic}"</div>
                         <div>Your speed was <span style={{ color: "var(--thepink)" }}>{this.props.speed}wps</span> </div>
                         <div>You paused <span style={{ color: "var(--thepink)" }}>{this.props.pauses} time(s)</span></div>
-                        <div>You pause frequency was <span style={{ color: "var(--thepink)" }}>{this.props.pauseRate} pauses per seconds</span></div>
+                        <div>Your pause frequency was <span style={{ color: "var(--thepink)" }}>{this.props.pauseRate} pauses per seconds</span></div>
                         <div>The duration of your total pauses was <span style={{ color: "var(--thepink)" }}>{this.props.pauseTime.toFixed(2)} seconds</span></div>
                         <div>You were silent for <span style={{ color: "var(--thepink)" }}>{this.props.speechDelay.toFixed(2)} seconds</span> before you started talking</div>
                         <br />
@@ -87,7 +85,7 @@ class Analysis extends Component {
                         <br />
                     </section>
                     <div>
-                        <div className="Analysis-footer">Check out you saved transcripts on your<Link className="Analysis-profile" to={`/profile/${this.props.userId}`}>&nbsp;profile&nbsp;</Link>page.</div>
+                        <div className="Analysis-footer">Check out your saved transcripts on your<Link className="Analysis-profile" to={`/profile/${this.props.userId}`}>&nbsp;profile&nbsp;</Link>page.</div>
                     </div>
                 </div>
             ) : (

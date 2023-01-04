@@ -5,7 +5,7 @@ import CategoriesList from "../modules/CategoriesList.js";
 import LoginPage from "./LoginPage.js";
 
 
-import { get, post } from "../../utilities";
+import { get } from "../../utilities";
 
 import "./Categories.css";
 

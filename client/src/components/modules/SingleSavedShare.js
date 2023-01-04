@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { FaTwitterSquare, FaWhatsappSquare, FaEnvelope  } from 'react-icons/fa';
 import { MdMessage  } from 'react-icons/md';
-import { IconContext } from "react-icons";
 
 import "./SingleSavedShare.css";
 import "../../utilities.css";

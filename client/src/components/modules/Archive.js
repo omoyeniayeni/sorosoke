@@ -1,11 +1,9 @@
 import React, { Component } from 'react'
 import MediaQuery from 'react-responsive'
-import { Link } from '@reach/router';
 import { get, post } from "../../utilities.js";
 import cricket from "../../public/cricket.png"
 
 import SavedTranscripts from "./SavedTranscripts.js";
-import LoginPage from "../pages/LoginPage.js";
 import GeneralAnalysis from "./GeneralAnalysis.js";
 
 import "./Archive.css"

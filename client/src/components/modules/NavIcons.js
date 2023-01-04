@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 
 import { FaChevronRight, FaChevronLeft, FaAngleDoubleDown } from 'react-icons/fa';
 import { VscTriangleUp, VscTriangleDown } from 'react-icons/vsc';
-import { IconContext } from "react-icons";
 
 import "./NavIcons.css";
 import "../../utilities.css";

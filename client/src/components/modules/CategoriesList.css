@@ -33,7 +33,6 @@
     text-align: center;
     line-height: 48px;
     background-color: rgb(235, 235, 235);
-    /* position: fixed; */
 }
 
 .CategoriesList-item:hover {
@@ -62,7 +61,6 @@
         text-align: center;
         line-height: 48px;
         background-color: rgb(235, 235, 235);
-        /* position: fixed; */
     }
 }
 
@@ -87,7 +85,6 @@
         text-align: center;
         line-height: 48px;
         background-color: rgb(235, 235, 235);
-        /* position: fixed; */
     }
 }
 
@@ -112,7 +109,6 @@
         text-align: center;
         line-height: 48px;
         background-color: rgb(235, 235, 235);
-        /* position: fixed; */
     }
 }
 
@@ -132,7 +128,6 @@
         text-align: center;
         line-height: 48px;
         background-color: rgb(235, 235, 235);
-        /* position: fixed; */
     }
 }
 

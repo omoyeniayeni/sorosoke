@@ -2,17 +2,15 @@ import React, { Component } from 'react'
 import Microphone from './Microphone';
 import Transcript from "./Transcript.js";
 import Topic from "../modules/Topic.js";
-import Navbar from "../modules/Navbar.js";
 
+import { navigate } from "@reach/router";
 
-import { Link, navigate } from "@reach/router";
-
-import { get, post } from "../../utilities";
+import { post } from "../../utilities";
 
 
 import "./Timer.css";
 
-// Converted Mateusz Rybczonec's countdown timer: https://bit.ly/3nH3AhO to React.js form and added functions
+// CREDIT: Converted Mateusz Rybczonec's countdown timer: https://bit.ly/3nH3AhO to React.js form and added functions
 
 class Timer extends Component {
     constructor(props) {
@@ -167,7 +165,6 @@ class Timer extends Component {
 
     handleClickOnDiscard = () => {
         if (confirm("You are about to discard this input")) {
-            // this.props.resetTranscript();
             navigate("/");
         }
     }

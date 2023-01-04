@@ -17,7 +17,6 @@ class about extends Component {
     componentDidMount() {
 
     }
-    // <img src={image} className="About-bigText" />
 
     render() {
         return (
@@ -40,7 +39,6 @@ class about extends Component {
                                 unplanned updates at work, filling in for a speaker, being interviewed 
                                 and speaking during debates.
                             </p>
-                            {/* <img src={image} className="About-bigText" /> */}
                             <p className="About-noteTwo">
                                 Sọrọ sókè is a Yoruba term that translates to 'Speak Up'. SoroSoke listens 
                                 to you as you speak on on one of the several available engaging prompts without 

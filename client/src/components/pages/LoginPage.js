@@ -35,7 +35,11 @@ class LoginPage extends Component {
                 <section className="LoginPage-sectionLogo">
                     <section className="LoginPage-sectionLogoContent">
                         <img src={image} className="LoginPage-bigText" />
-                        <p className="LoginPage-loginCue">Ready to improve your speaking skills? {loginButton}</p>
+                        <p className="LoginPage-loginCue">Ready to improve your speaking skills?
+                            <p className="LoginPage-loginButton">
+                                {loginButton}
+                            </p>
+                        </p>
                         <a className="LoginPage-navDown" href="#LoginPage-sectionIntroduction"><NavDoubleDown /></a>
                     </section>
                 </section>
@@ -102,7 +106,11 @@ class LoginPage extends Component {
                             </p>
                         </section>
                     </section>
-                    <p className="LoginPage-loginCueDown">Ready to improve your speaking skills? {loginButton}</p>
+                    <p className="LoginPage-loginCueDown">Ready to improve your speaking skills? 
+                        <p className="LoginPage-loginButton">
+                            {loginButton}
+                        </p>
+                    </p>
                 </section>
             </div>
         )

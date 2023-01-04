@@ -64,7 +64,6 @@
 .About-sectionAllSteps {
     color: black;
     height: 100vh;
-    /* background: linear-gradient(var(--thelightpink), var(--thegreen)); */
     background-color: white;
     padding: 128px 80px;
 }

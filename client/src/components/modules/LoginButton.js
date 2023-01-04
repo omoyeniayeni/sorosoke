@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-import GoogleLogin, { GoogleLogout } from "react-google-login";
-
-import Navbar from "../modules/Navbar.js";
+import { GoogleLogin } from '@react-oauth/google'; 
 
 import "../../utilities.css";
 import "./LoginButton.css"
@@ -15,29 +13,22 @@ class LoginButton extends Component {
     // Initialize Default State
     this.state = {};
   }
-
-  componentDidMount() {
-    // remember -- api calls go here!
-  }
-
+  
   render() {
     return (
       <>
         {this.props.userId ? (
-          <GoogleLogout
-            clientId={GOOGLE_CLIENT_ID}
-            buttonText="Sign out"
-            onLogoutSuccess={this.props.handleLogout}
-            onFailure={(err) => console.log(`logout error: ${err}`)}
-          />
+          <button type="button" className="LoginButton-logoutButton" onClick= {this.props.handleLogout}>
+            Sign Out
+          </button>
         ) : (
           <GoogleLogin
-            clientId={GOOGLE_CLIENT_ID}
-            buttonText="Sign in with Google"
-            onSuccess={this.props.handleLogin}
-            onFailure={(err) => console.log(err)}
+            onSuccess = {this.props.handleLogin}
+            onError={(err) => {
+              console.log(err);
+            }}
           />
-        )}  
+        )}
       </>
     );
   }

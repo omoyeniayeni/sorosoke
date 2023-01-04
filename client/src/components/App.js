@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import { Router, Redirect, navigate } from "@reach/router";
+import jwt_decode from 'jwt-decode';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
+
+import { GoogleOAuthProvider } from '@react-oauth/google';
+const GOOGLE_CLIENT_ID = "947362323574-h52vtsp5aenl8hhk9mo5cja89ahihjli.apps.googleusercontent.com";
 
 import NotFound from "./pages/NotFound.js";
 import NotCompatible from "./pages/NotCompatible.js";
@@ -64,14 +69,16 @@ class App extends Component {
   }
 
   handleLogin = (res) => {
-    console.log(`Logged in as ${res.profileObj.name}`);
-    const userToken = res.tokenObj.id_token;
-    post("/api/login", { token: userToken }).then((user) => {
-      this.setState({ userId: user._id, userName: user.name });
-      // post("/api/initsocket", { socketid: socket.id }); //socket
-      navigate("/categories");
+    let decoded = jwt_decode(res.credential);
+    console.log(decoded);
+    console.log(`Logged in as ${decoded.name}`);
+    const email_verified = decoded.email_verified;
+    const userToken = res.credential;
+    post("/api/login", { token: userToken }).then(() => {
+      this.setState({ userId: decoded.sub, userName: decoded.name })
+      navigate("/categories")
     });
-  };
+  }  
 
   handleLogout = () => {
     console.log("Logged out successfully!");
@@ -265,7 +272,7 @@ class App extends Component {
   render() {
     if ('SpeechRecognition' in window || 'webkitSpeechRecognition' in window) {
       return (
-        <>
+        <GoogleOAuthProvider clientId = {GOOGLE_CLIENT_ID}>
           <Router>
             <LoginPage 
               exact path = "/"
@@ -362,7 +369,7 @@ class App extends Component {
             />
             <NotFound default />
           </Router>
-        </>
+        </GoogleOAuthProvider>
       );
     } 
     else {
