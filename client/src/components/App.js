@@ -296,7 +296,6 @@ class App extends Component {
               provideTopic = {this.provideTopic}
               handleLogin={this.handleLogin}
               handleLogout={this.handleLogout}
-              provideTopic = {this.provideTopic}
               userId={this.state.userId}
               userName={this.state.userName}
             />
