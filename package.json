@@ -5,8 +5,8 @@
   "main": "server/server.js",
   "scripts": {
     "hotloader": "webpack serve --config ./webpack.config.js --mode development --port 5001",
-    "start": "nodemon --ignore client/ && react-scripts --openssl-legacy-provider start",
-    "build": "webpack && react-scripts --openssl-legacy-provider build"
+    "start": "nodemon --ignore client/",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
